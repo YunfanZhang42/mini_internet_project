@@ -4,18 +4,19 @@ This is a modified version of ETH Zurich's Mini Internet exercise to suit the re
 A strong suggestion is to go through ETH's setup instructions before attempting to run from this repository. 
 
 Additional files:
-    - ./CSEE4119-F20/generateAS1000connections.py
-    - ./CSEE4119-F20/F-20_Topology
-    - ./CSEE4119-F20/*.pdf
-    - ./CSEE4119-F20/external_links_config_80.txt
-    - ./CSEE4119-F20/AS_config_80.txt
-    - ./platform/utils/.bashrc
-    - ./platform/utils/copyfile.sh
-    - ./platform/utils/killTraceroutes.sh
-    - ./platform/utils/sendEmails.gs
-    - ./platform/utils/server.py
-    - ./platform/utils/updateGlass.sh
-    - ./platform/utils/updateMatrix.sh
+
+- ./CSEE4119-F20/generateAS1000connections.py
+- ./CSEE4119-F20/F-20_Topology
+- ./CSEE4119-F20/*.pdf
+- ./CSEE4119-F20/external_links_config_80.txt
+- ./CSEE4119-F20/AS_config_80.txt
+- ./platform/utils/.bashrc
+- ./platform/utils/copyfile.sh
+- ./platform/utils/killTraceroutes.sh
+- ./platform/utils/sendEmails.gs
+- ./platform/utils/server.py
+- ./platform/utils/updateGlass.sh
+- ./platform/utils/updateMatrix.sh
     
 ## Fall 2020 Setup
 
@@ -124,7 +125,7 @@ This can happen primarily because of 2 reasons:
 
 4. Restarting AS1000- takes about 10-15 hours given the number of connections it has to form. 
 
-## Potential Improvements:
+## Potential Improvements/ TODO:
 
 1. Looking Glass currently uses a round-robin method to fetch the data from all devices in the topology. This results in the glass taking a long time to reflect any changes in the configuration. 
    Solution: Fetch the file from the container on request- write a servier that does a retrives the corresponding file present in the device's home directory when a GET request is issued by a user.
@@ -133,3 +134,7 @@ This can happen primarily because of 2 reasons:
    Discuss with the professor for this particular implementation- ensure that the list of *allowed* packages for Project 1, update DockerFile associated with the host and create a new image.
 
 3. See if the connectivity matrix can be sped up (not sure how to go about it). The current implementation details can be found in the original repository.
+
+4. Write better code:
+    - Generalize copyfile with better arguments.
+    - Integrate generateConnections.py and generateAS1000Connections.py into a single file
